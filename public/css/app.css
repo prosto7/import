@@ -10112,3 +10112,26 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+
+.lead th {
+  color: wheat;
+}
+
+.lead td {
+  color: whitesmoke;
+}
+
+.form-buttons-download {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-buttons-download .btn {
+  min-width: 150px;
+}
+
+.masthead {
+  min-height: 100px;
+}

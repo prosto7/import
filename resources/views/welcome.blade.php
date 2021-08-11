@@ -12,57 +12,45 @@
 
 <body class="text-center">
 
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
-          </nav>
-        </div>
+    <div class="container-fluid">
+      <header class="masthead justify-content-center">
+      <h3 class="mt-5">File Storage</h3>
+      
       </header>
 
-      <main role="main" class="">
+      <main role="main" class="inner cover">
     <div class="container">
-    <table class="table inner cover">
+    <table class="table">
   <thead class="lead">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Link</th>
+      <th scope="col">Size,kb</th>
+      <th scope="col">Create</th>
     </tr>
   </thead>
   <tbody class="lead">
+    @foreach($files as $file)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$file->id}}</th>
+      <td>{{$file->link}}</td>
+      <td>{{$file->size}}</td>
+      <td>{{$file->created_at}}</td>
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  @endforeach
   </tbody>
 </table>
 
         <form action="{{ route('upload')}}" method="post" class="form-group" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="exampleFormControlFile1">Пример ввода файла</label>
+          
+                <label for="exampleFormControlFile1">Example File</label>
+                <div class="form-buttons-download">
                 <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" multiple>
                 <button type="submit" class="btn btn-success">Send</button>
+                </div>
             </div>
         </form>
    
