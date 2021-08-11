@@ -15,8 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->string('Link');
-            $table->float('Size,mb',8,2);
+            $table->string('link');
+            $table->float('size',8,2);
             $table->timestamps();
         });
     }
