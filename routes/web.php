@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','App\Http\Controllers\UploadController@getForm');
 Route::post('/','App\Http\Controllers\UploadController@upload')->name('upload');
-Route::get('/','App\Http\Controllers\UploadController@getData')->name('files');
+// Route::get('/','App\Http\Controllers\UploadController@getData')->name('files');

@@ -11,7 +11,7 @@
 </head>
 
 <body class="text-center">
-  <div class="main_block container-fluid">
+  <div class="container-fluid">
 
     
       <header class="masthead justify-content-center">
@@ -20,7 +20,7 @@
       </header>
 
       <div class="inner cover">
-    <div class="container">
+    <div class="container-fluid">
     <table class="table">
   <thead class="lead">
     <tr>
@@ -52,20 +52,6 @@
         </ul>
     </div>
 @endif
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
 
         <form action="{{ route('upload')}}" method="post" class="form-group" enctype="multipart/form-data">
             @csrf
@@ -73,7 +59,7 @@
           
                 <label for="exampleFormControlFile1">Example File</label>
                 <div class="form-buttons-download">
-                <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" multiple>
+                <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" >
                 <button type="submit" class="btn btn-success">Send</button>
                 </div>
             </div>
