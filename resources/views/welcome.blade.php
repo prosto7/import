@@ -11,14 +11,15 @@
 </head>
 
 <body class="text-center">
+  <div class="main_block container-fluid">
 
-    <div class="container-fluid">
+    
       <header class="masthead justify-content-center">
       <h3 class="mt-5">File Storage</h3>
       
       </header>
 
-      <main role="main" class="inner cover">
+      <div class="inner cover">
     <div class="container">
     <table class="table">
   <thead class="lead">
@@ -35,12 +36,36 @@
       <th scope="row">{{$file->id}}</th>
       <td>{{$file->link}}</td>
       <td>{{$file->size}}</td>
-      <td>{{$file->created_at}}</td>
+      <td class="create" >{{$file->created_at}}</td>
       
     </tr>
   @endforeach
   </tbody>
 </table>
+<hr class="m-5">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
         <form action="{{ route('upload')}}" method="post" class="form-group" enctype="multipart/form-data">
             @csrf
@@ -55,7 +80,7 @@
         </form>
    
     </div>
-    </main>
+    </div>
 
 <footer class="mastfoot mt-auto">
   <div class="inner">

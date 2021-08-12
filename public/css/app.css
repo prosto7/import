@@ -10093,6 +10093,9 @@ body {
   }
 }
 
+.main_block {
+  height: 100%;
+}
 
 /*
  * Cover
@@ -10134,4 +10137,8 @@ body {
 
 .masthead {
   min-height: 100px;
+}
+
+.create {
+  min-width: 300px;
 }
